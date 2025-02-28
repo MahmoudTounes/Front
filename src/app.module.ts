@@ -1,9 +1,15 @@
+// app.module.ts
 import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UtilisateursModule } from './utilisateurs/utilisateurs.module';
 
 @Module({
-  imports: [],
+  imports: [
+    MongooseModule.forRoot('mongodb://localhost/baseDonnéesEducation'), // Vérifiez l'URL
+    UtilisateursModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
