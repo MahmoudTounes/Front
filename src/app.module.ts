@@ -1,16 +1,16 @@
-// app.module.ts
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UtilisateursModule } from './utilisateurs/utilisateurs.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/baseDonnéesEducation'), // Vérifiez l'URL
-    UtilisateursModule,
+    MongooseModule.forRoot('mongodb://localhost/Education'), // Nom de la base de données
+    UsersModule,
+    AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
