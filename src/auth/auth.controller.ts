@@ -9,15 +9,15 @@ export class AuthController {
 
   @Post('register')
   async register(@Body() registerAuthDto: RegisterAuthDto) {
-    console.log('birthDate received:', registerAuthDto.birthDate);
+    // Suppression de l'affichage de la date de naissance
+    // console.log('Date de naissance reçue:', registerAuthDto.birthDate);
+
     return this.authService.register(registerAuthDto);
   }
-
 
   @Post('login')
   async login(@Body(ValidationPipe) loginAuthDto: LoginAuthDto) {
     return this.authService.login(loginAuthDto);
   }
 }
-
  

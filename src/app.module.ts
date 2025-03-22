@@ -6,7 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/Education'), // Nom de la base de données
+    MongooseModule.forRoot('mongodb://localhost/BaseDonnéesFormation'), // Nom de la base de données
     UsersModule,
     AuthModule,
   ],
